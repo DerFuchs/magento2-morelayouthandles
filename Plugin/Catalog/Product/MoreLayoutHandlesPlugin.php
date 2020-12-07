@@ -1,4 +1,17 @@
 <?php
+/**
+ * Plugin to add some more useful layout handles to product pages:
+ *
+ * - Attribute set id: catalog_product_view_attribute_set_id_1337
+ * - Attribute set name: catalog_product_view_attribute_set_my_attributeset_name
+ *
+ * @category  DerFuchs
+ * @package   DerFuchs_MoreLayoutHandles
+ * @author    Michael Fuchs - derfuchs
+ * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - http://www.derfuchs.net
+ * @license   MIT
+ */
+
 declare(strict_types=1);
 
 namespace DerFuchs\MoreLayoutHandles\Plugin\Catalog\Product;
@@ -8,29 +21,48 @@ use Magento\Catalog\Model\Product;
 use Magento\Framework\DataObject;
 use Magento\Framework\View\Result\Page as ResultPage;
 use Magento\Framework\View\Result\Page;
+use Magento\Eav\Api\AttributeSetRepositoryInterface;
+use DerFuchs\MoreLayoutHandles\Helper\Data as HelperData;
 
-/**
- * Plugin to add some more useful layout handles to product pages:
- * - Attribute set name: catalog_product_view_attribute_set_my_attributeset_name
- *
- * @author Michael Fuchs - derfuchs <michael@derfuchs.net>
- */
 class MoreLayoutHandlesPlugin
 {
+    /**
+     * A collection of all added layout handles. For easy debugging and development.
+     *
+     * @var array
+     */
+    private $addedHandles = [];
+
+    // ------------------------------------------------------------------------------
+
+    /**
+     * A Result/Page object
+     *
+     * @var Page
+     */
+    private $resultPage;
+
+    // ------------------------------------------------------------------------------
+
     /**
      * Just the constructor. Nothing special to see here. Just go along.
      *
      * @param \Magento\Eav\Api\AttributeSetRepositoryInterface $attributeSet
      */
     public function __construct(
-        \Magento\Eav\Api\AttributeSetRepositoryInterface $attributeSet
+        AttributeSetRepositoryInterface $attributeSet,
+        HelperData $helperData
     ) {
         $this->attributeSet = $attributeSet;
+        $this->helperData = $helperData;
     }
 
     // ------------------------------------------------------------------------------
 
     /**
+     * Inject the additional layout handles when they have been enabled in the admin
+     * panel.
+     *
      * @param  ProductViewHelper    $subject
      * @param  Page                 $resultPage
      * @param  Product              $product
@@ -43,23 +75,85 @@ class MoreLayoutHandlesPlugin
         $product,
         $params
     ) {
-
-        // Add a Handle for product's attribute set
-        $attributeSetName = ($this->attributeSet->get($product->getAttributeSetId()))
-                                ->getAttributeSetName();
-        $attributeSetNameSlug = strtolower(preg_replace('#[^0-9a-z]+#i', '_', $attributeSetName));
-        $resultPage->addHandle("catalog_product_view_attribute_set_" . $attributeSetNameSlug);
-
-        /*
-        if ($resultPage instanceof ResultPage
-            && $product->getData('configurator_active')
-            && $product->getData('configurator_active') == 1
-        ) {
-            $resultPage->addHandle([static::PRODUCT_LAYOUT_HANDLE]);
+        // don't do anything when $resultPage is not a Page object
+        if (!$resultPage instanceof ResultPage) {
+            return [$resultPage, $product, $params];
         }
-        */
 
-        return [$resultPage, $product, $params];
+        // store in class attribute for easy collecting of debug messages
+        $this->resultPage = $resultPage;
+
+        // Generate layout handles belonging to attribute sets
+        $this->addAttributeSetHandles($product);
+
+        // do some debugging stuff if config says so
+        if ($this->helperData->getModuleConfigValue('debug') == 1) {
+            $this->showDebug();
+        }
+
+        return [$this->resultPage, $product, $params];
+    }
+
+    // ------------------------------------------------------------------------------
+
+    /**
+     * Generate layout handles belonging to attribute sets
+     *
+     * @param Page $resultPage
+     * @param Product $product
+     *
+     * @return void
+     */
+    private function addAttributeSetHandles(
+        $product
+    ) {
+        // Add a Handle for product's attribute set id
+        if ($this->helperData->getModuleConfigValue('attribute_set/add_id/enable') == 1) {
+            $attributeSetIdPrefix = $this->helperData->getModuleConfigValue('attribute_set/add_id/prefix');
+            $this->addHandle($attributeSetIdPrefix . $product->getAttributeSetId());
+        }
+
+        // Add a Handle for product's attribute set name
+        if ($this->helperData->getModuleConfigValue('attribute_set/add_name/enable') == 1) {
+            $attributeSetName = ($this->attributeSet->get($product->getAttributeSetId()))->getAttributeSetName();
+            $attributeSetNameSlug = strtolower(preg_replace('#[^0-9a-z]+#i', '_', $attributeSetName));
+            $attributeSetNamePrefix = $this->helperData->getModuleConfigValue('attribute_set/add_name/prefix');
+            $this->addHandle($attributeSetNamePrefix . $attributeSetNameSlug);
+        }
+
+        return $this;
+    }
+
+    // ------------------------------------------------------------------------------
+
+    /**
+     * Add a layout handle to the page
+     *
+     * @param string $handleName
+     *
+     * @return Page
+     */
+    private function addHandle($handleName) {
+        $this->addedHandles[] = $handleName;
+        return $this->resultPage->addHandle($handleName);
+    }
+
+    // ------------------------------------------------------------------------------
+
+    /**
+     * Display a litte debug message on top of the page containing a list of added
+     * layout handles.
+     *
+     * @return void
+     */
+    private function showDebug() {
+        echo "<pre>";
+        echo "added handles on this page: \n";
+        echo "(Disable this debug message in Admin -> Stores -> Configuration -> Advanced -> Developer -> More Layout Handles Settings -> Debug)) \n";
+        foreach ($this->addedHandles as $key=>$handleName) {
+            echo " + " . $handleName . "\n";
+        }
+        echo "</pre>";
     }
 
     // ------------------------------------------------------------------------------
