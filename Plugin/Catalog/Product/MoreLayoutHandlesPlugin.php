@@ -40,7 +40,7 @@ class MoreLayoutHandlesPlugin
      *
      * @var Page
      */
-    private $resultPage;
+    private $_resultPage;
 
     // ------------------------------------------------------------------------------
 
@@ -81,7 +81,7 @@ class MoreLayoutHandlesPlugin
         }
 
         // store in class attribute for easy collecting of debug messages
-        $this->resultPage = $resultPage;
+        $this->_resultPage = $resultPage;
 
         // Generate layout handles belonging to attribute sets
         $this->addAttributeSetHandles($product);
@@ -91,7 +91,7 @@ class MoreLayoutHandlesPlugin
             $this->showDebug();
         }
 
-        return [$this->resultPage, $product, $params];
+        return [$this->_resultPage, $product, $params];
     }
 
     // ------------------------------------------------------------------------------
@@ -135,7 +135,7 @@ class MoreLayoutHandlesPlugin
      */
     private function addHandle($handleName) {
         $this->addedHandles[] = $handleName;
-        return $this->resultPage->addHandle($handleName);
+        return $this->_resultPage->addHandle($handleName);
     }
 
     // ------------------------------------------------------------------------------
