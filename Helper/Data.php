@@ -5,7 +5,7 @@
  * @category  DerFuchs
  * @package   DerFuchs_MoreLayoutHandles
  * @author    Michael Fuchs - derfuchs
- * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - http://www.derfuchs.net
+ * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - https://www.derfuchs.net
  * @license   MIT
  */
 
@@ -19,7 +19,7 @@ class Data extends AbstractHelper
     /**
      * Module's config path
      */
-	const XML_PATH_MORELAYOUTHANDLES = 'dev/derfuchs_morelayouthandles/';
+	const XML_PATH_MORELAYOUTHANDLES = 'derfuchs_morelayouthandles/';
 
     // ------------------------------------------------------------------------------
 

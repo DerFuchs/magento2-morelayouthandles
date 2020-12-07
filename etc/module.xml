@@ -1,4 +1,15 @@
 <?xml version="1.0"?>
+<!--
+/**
+ * Module DerFuchs_MoreLayoutHandles
+ *
+ * @category  DerFuchs
+ * @package   DerFuchs_MoreLayoutHandles
+ * @author    Michael Fuchs - derfuchs
+ * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - https://www.derfuchs.net
+ * @license   MIT
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="DerFuchs_MoreLayoutHandles" setup_version="1.0.0" />
 </config>

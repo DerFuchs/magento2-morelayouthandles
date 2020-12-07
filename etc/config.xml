@@ -6,33 +6,33 @@
  * @category  DerFuchs
  * @package   DerFuchs_MoreLayoutHandles
  * @author    Michael Fuchs - derfuchs
- * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - http://www.derfuchs.net
+ * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - https://www.derfuchs.net
  * @license   MIT
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <dev>
-            <derfuchs_morelayouthandles>
+        <derfuchs_morelayouthandles>
+            <general>
                 <debug>0</debug>
+            </general>
 
-                <!-- everything belonging to attribute sets -->
-                <attribute_set>
+            <!-- everything belonging to attribute sets -->
+            <attribute_set>
 
-                    <!-- Attribute Set ID -->
-                    <add_id>
-                        <enable>0</enable>
-                        <prefix><![CDATA[catalog_product_view_attribute_set_id_]]></prefix>
-                    </add_id>
+                <!-- Attribute Set ID -->
+                <add_id>
+                    <enable>0</enable>
+                    <prefix><![CDATA[catalog_product_view_attribute_set_id_]]></prefix>
+                </add_id>
 
-                    <!-- Attribute Set Name -->
-                    <add_name>
-                        <enable>0</enable>
-                        <prefix><![CDATA[catalog_product_view_attribute_set_name_]]></prefix>
-                    </add_name>
+                <!-- Attribute Set Name -->
+                <add_name>
+                    <enable>0</enable>
+                    <prefix><![CDATA[catalog_product_view_attribute_set_name_]]></prefix>
+                </add_name>
 
-                </attribute_set>
-            </derfuchs_morelayouthandles>
-        </dev>
+            </attribute_set>
+        </derfuchs_morelayouthandles>
     </default>
 </config>

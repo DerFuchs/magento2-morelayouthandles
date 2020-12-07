@@ -6,61 +6,68 @@
  * @category  DerFuchs
  * @package   DerFuchs_MoreLayoutHandles
  * @author    Michael Fuchs - derfuchs
- * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - http://www.derfuchs.net
+ * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - https://www.derfuchs.net
  * @license   MIT
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="dev" translate="label">
-            <group id="derfuchs_morelayouthandles" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label><![CDATA[More Layout Handles Settings]]></label>
+        <!-- Make a new section under "general" tab -->
+        <section id="derfuchs_morelayouthandles" translate="label" sortOrder="9000" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <tab>general</tab>
+            <label><![CDATA[More Layout Handles]]></label>
+            <resource>DerFuchs_MoreLayoutHandles::config</resource>
 
-                <field id="debug" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+            <!-- General module settings -->
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[General Settings]]></label>
+                <field id="debug" translate="label comment tooltip" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[<span style="color: red;">Debug:</span> Show added layout handles in frontend]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment><![CDATA[<span style="color: red;">Do not enable in production, obviously.</span>]]></comment>
+                    <tooltip>Use this option to display a list of all layout handles which have been added to a specific page. Very useful when you want to create and edit the layout xml file for a handle and you don't have a developer toolbar available.</tooltip>
                 </field>
+            </group>
 
-                <group id="attribute_set" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label><![CDATA[Add Layout Handles based on attribute sets]]></label>
+            <!-- Layout handles belonging to attribute sets -->
+            <group id="attribute_set" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label><![CDATA[Add Layout Handles based on attribute sets]]></label>
 
-                    <!-- Attribute Set ID -->
-                    <group id="add_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                        <label><![CDATA[Attribute Set ID]]></label>
-                        <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                            <label><![CDATA[Add product's attribute set ID to product pages]]></label>
-                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                            <comment><![CDATA[The resulting layout handle will be called like "catalog_product_view_attribute_set_id_1337"]]></comment>
-                        </field>
-                        <field id="prefix" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                            <label><![CDATA[Prefix]]></label>
-                            <comment><![CDATA[Prefix used by the attribute set ID handle.]]></comment>
-                            <validate>no-whitespace validate-data</validate>
-                            <depends>
-                                <field id="enable">1</field>
-                            </depends>
-                        </field>
-                    </group>
+                <!-- Attribute Set ID -->
+                <group id="add_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Attribute Set ID]]></label>
+                    <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label><![CDATA[Add product's attribute set ID to product pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment><![CDATA[The resulting layout handle will be called like "catalog_product_view_attribute_set_id_1337"]]></comment>
+                    </field>
+                    <field id="prefix" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label><![CDATA[Prefix]]></label>
+                        <comment><![CDATA[Prefix used by the attribute set ID handle.]]></comment>
+                        <validate>no-whitespace validate-data</validate>
+                        <depends>
+                            <field id="enable">1</field>
+                        </depends>
+                    </field>
+                </group>
 
-                    <!-- Attribute Set Name -->
-                    <group id="add_name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                        <label><![CDATA[Attribute Set Name]]></label>
-                        <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                            <label><![CDATA[Add product's attribute set name to product pages]]></label>
-                            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                            <comment><![CDATA[The resulting layout handle will be called like "catalog_product_view_attribute_set_slugified_attribute_set_name"]]></comment>
-                        </field>
-                        <field id="prefix" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                            <label><![CDATA[Prefix]]></label>
-                            <comment><![CDATA[Prefix used by the attribute set name handle.]]></comment>
-                            <validate>no-whitespace validate-data</validate>
-                            <depends>
-                                <field id="enable">1</field>
-                            </depends>
-                        </field>
-                    </group>
-
+                <!-- Attribute Set Name -->
+                <group id="add_name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Attribute Set Name]]></label>
+                    <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label><![CDATA[Add product's attribute set name to product pages]]></label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <comment><![CDATA[The resulting layout handle will be called like "catalog_product_view_attribute_set_slugified_attribute_set_name"]]></comment>
+                    </field>
+                    <field id="prefix" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                        <label><![CDATA[Prefix]]></label>
+                        <comment><![CDATA[Prefix used by the attribute set name handle.]]></comment>
+                        <validate>no-whitespace validate-data</validate>
+                        <depends>
+                            <field id="enable">1</field>
+                        </depends>
+                    </field>
                 </group>
             </group>
         </section>
