@@ -19,8 +19,15 @@
             <label><![CDATA[More Layout Handles]]></label>
             <resource>DerFuchs_MoreLayoutHandles::config</resource>
 
+            <group id="notes" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>About More Layout Handles Module</label>
+                <field id="developer_notes" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>DerFuchs\MoreLayoutHandles\Block\System\Config\Notes</frontend_model>
+                </field>
+            </group>
+
             <!-- General module settings -->
-            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[General Settings]]></label>
                 <field id="debug" translate="label comment tooltip" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[<span style="color: red;">Debug:</span> Show added layout handles in frontend]]></label>
@@ -31,7 +38,7 @@
             </group>
 
             <!-- Layout handles belonging to attribute sets -->
-            <group id="attribute_set" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="attribute_set" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label><![CDATA[Add Layout Handles based on attribute sets]]></label>
 
                 <!-- Attribute Set ID -->
@@ -53,7 +60,7 @@
                 </group>
 
                 <!-- Attribute Set Name -->
-                <group id="add_name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <group id="add_name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label><![CDATA[Attribute Set Name]]></label>
                     <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                         <label><![CDATA[Add product's attribute set name to product pages]]></label>
