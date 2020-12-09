@@ -177,6 +177,6 @@ Project Link: [https://github.com/DerFuchs/magento2-morelayouthandles](https://g
 [issues-shield]: https://img.shields.io/github/issues/DerFuchs/magento2-morelayouthandles.svg?style=for-the-badge
 [issues-url]: https://github.com/DerFuchs/magento2-morelayouthandles/issues
 [license-shield]: https://img.shields.io/github/license/DerFuchs/magento2-morelayouthandles.svg?style=for-the-badge
-[license-url]: https://github.com/DerFuchs/magento2-morelayouthandles/blob/master/LICENSE
+[license-url]: https://github.com/DerFuchs/magento2-morelayouthandles/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/michael-fuchs-7b669546/
