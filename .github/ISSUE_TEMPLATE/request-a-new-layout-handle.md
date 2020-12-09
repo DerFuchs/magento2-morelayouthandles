@@ -1,5 +1,5 @@
 ---
-name: Request a new layout handle template
+name: Request a new layout handle
 about: Tell me if you'd like to get another layout handle
 title: "[NEW HANDLE]"
 labels: enhancement
