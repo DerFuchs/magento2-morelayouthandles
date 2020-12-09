@@ -27,13 +27,10 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+        <a href="#installation">Installation</a>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#available-layout-updates">Available Layout Updates</a></li>
+    <li><a href="#available-layout-handles">Available Layout Handles</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -48,7 +45,7 @@
 
 This Module dynamically adds some more layout handles to specific Magento 2 pages.
 
-This becomes very useful when you want to make changes to the layout, for example remove some blocks or move them to another location.
+This becomes very useful when you want to make changes to the layout, for example remove some blocks or move them to another location, but you want them to be available only on specific pages or for specific products, attribute sets and stuff like that. See [Available Layout Handles](#available-layout-handles) for what's possible at the moment with this version of the module.
 
 
 ### Built For
@@ -57,12 +54,10 @@ This becomes very useful when you want to make changes to the layout, for exampl
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+<!-- INSTALLATION -->
+## Installation
 
 This module is available as a composer module for Magento 2
-
-### Installation
 
 1. Install to your Magento 2 by using composer
    ```sh
@@ -107,7 +102,7 @@ Enable every desired layout handle in this modules config section in Magento's a
 
 That's it. When the layout handle occurs, Magento will bake in yout layout updates.
 
-## Available Layout Updates
+## Available Layout Handles
 
 This is a list of all possible layout handles
 
