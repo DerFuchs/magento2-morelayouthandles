@@ -5,12 +5,12 @@
   <p align="center">
     Get some more useful layout handles for Magento 2
     <br />
-    <a href="https://github.com/DerFuchs/MoreLayoutHandles"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/DerFuchs/magento2-morelayouthandles"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/DerFuchs/MoreLayoutHandles/issues">Report Bug</a>
+    <a href="https://github.com/DerFuchs/magento2-morelayouthandles/issues">Report Bug</a>
     ·
-    <a href="https://github.com/DerFuchs/MoreLayoutHandles/issues">Request Feature</a>
+    <a href="https://github.com/DerFuchs/magento2-morelayouthandles/issues">Request Feature</a>
   </p>
 </p>
 
@@ -120,13 +120,13 @@ This is a list of all possible layout handles
 * layout handle's name: catalog_product_view_attribute_set_name_(attribute-set-name)
 
 ### Didn't find what you need?
-Feel free to [ask for implementation](https://github.com/DerFuchs/MoreLayoutHandles/issues) or do it by yourself (and make a pull request to let others participate :) ).
+Feel free to [ask for implementation](https://github.com/DerFuchs/magento2-morelayouthandles/issues) or do it by yourself (and make a pull request to let others participate :) ).
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/DerFuchs/MoreLayoutHandles/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/DerFuchs/magento2-morelayouthandles/issues) for a list of proposed features (and known issues).
 
 ### Upcoming Version 1.1
 Add layout handles on the occurance of specific product attributes
@@ -161,7 +161,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Michael Fuchs - derfuchs - michael@derfuchs.net
 
-Project Link: [https://github.com/DerFuchs/MoreLayoutHandles](https://github.com/DerFuchs/MoreLayoutHandles)
+Project Link: [https://github.com/DerFuchs/magento2-morelayouthandles](https://github.com/DerFuchs/magento2-morelayouthandles)
 
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
