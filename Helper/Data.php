@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - https://www.derfuchs.net
  * @license   MIT
  */
+declare(strict_types=1);
 
 namespace DerFuchs\Morelayouthandles\Helper;
 

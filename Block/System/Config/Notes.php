@@ -1,9 +1,6 @@
 <?php
 /**
- * Plugin to add some more useful layout handles to product pages:
- *
- * - Attribute set id: catalog_product_view_attribute_set_id_1337
- * - Attribute set name: catalog_product_view_attribute_set_my_attributeset_name
+ * Some notes for this module
  *
  * @category  DerFuchs
  * @package   DerFuchs_MoreLayoutHandles
@@ -11,6 +8,7 @@
  * @copyright Copyright (c) 2020 Michael Fuchs - derfuchs - https://www.derfuchs.net
  * @license   MIT
  */
+declare(strict_types=1);
 
 namespace DerFuchs\MoreLayoutHandles\Block\System\Config;
 

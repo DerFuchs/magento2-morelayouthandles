@@ -31,7 +31,7 @@ class MoreLayoutHandlesPlugin
      *
      * @var array
      */
-    private $addedHandles = [];
+    protected $addedHandles = [];
 
     // ------------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ class MoreLayoutHandlesPlugin
      *
      * @var Page
      */
-    private $_resultPage;
+    protected $_resultPage;
 
     // ------------------------------------------------------------------------------
 
@@ -104,7 +104,7 @@ class MoreLayoutHandlesPlugin
      *
      * @return void
      */
-    private function addAttributeSetHandles(
+    protected function addAttributeSetHandles(
         $product
     ) {
         // Add a Handle for product's attribute set id
@@ -133,7 +133,7 @@ class MoreLayoutHandlesPlugin
      *
      * @return Page
      */
-    private function addHandle($handleName) {
+    protected function addHandle($handleName) {
         $this->addedHandles[] = $handleName;
         return $this->_resultPage->addHandle($handleName);
     }
@@ -146,10 +146,10 @@ class MoreLayoutHandlesPlugin
      *
      * @return void
      */
-    private function showDebug() {
+    protected function showDebug() {
         echo "<pre>";
         echo "added handles on this page: \n";
-        echo "(Disable this debug message in Admin -> Stores -> Configuration -> Advanced -> Developer -> More Layout Handles Settings -> Debug)) \n";
+        echo "(Disable this debug message in Admin -> Stores -> Configuration -> General -> More Layout Handles -> General Settings -> Debug)) \n";
         foreach ($this->addedHandles as $key=>$handleName) {
             echo " + " . $handleName . "\n";
         }
