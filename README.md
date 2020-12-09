@@ -81,7 +81,7 @@ This module is available as a composer module for Magento 2
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Enable every possible new layout handle in Magento's admin panel. Then set your layout updates in a layout xml file:
+Enable every desired layout handle in this modules config section in Magento's admin panel. Then set your layout updates in a layout xml file:
 
 1. Enable the layout handle you want to use: `Magento Admin -> Stores -> Configuration -> General -> More Layout Handles`
 2. Check if the new layout handle appears by using a developer toolbar or enabling the debug output of this module: `Magento Admin -> Stores -> Configuration -> General -> More Layout Handles -> General Settings -> Debug`
