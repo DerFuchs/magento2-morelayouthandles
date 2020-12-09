@@ -109,16 +109,18 @@ That's it. When the layout handle occurs, Magento will bake in yout layout updat
 
 ## Available Layout Updates
 
-### Add product's attribute set ID to product pages
-occurs on: product detail pages
-layout handle's name: catalog_product_view_attribute_set_id_(attribute-set-id)
+This is a list of all possible layout handles
 
-### Add product's attribute set name to product pages
-occurs on: product detail pages
-layout handle's name: catalog_product_view_attribute_set_name_(attribute-set-name)
+### Product's attribute set ID
+* available at: product detail pages
+* layout handle's name: catalog_product_view_attribute_set_id_(attribute-set-id)
+
+### Product's attribute set name
+* available at: product detail pages
+* layout handle's name: catalog_product_view_attribute_set_name_(attribute-set-name)
 
 ### Didn't find what you need?
-Feed free to [ask for implementation](https://github.com/DerFuchs/MoreLayoutHandles/issues) or do it by yourself (and make a pull request to let others participate :) ).
+Feel free to [ask for implementation](https://github.com/DerFuchs/MoreLayoutHandles/issues) or do it by yourself (and make a pull request to let others participate :) ).
 
 
 <!-- ROADMAP -->
@@ -171,15 +173,15 @@ Project Link: [https://github.com/DerFuchs/MoreLayoutHandles](https://github.com
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/DerFuchs/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/DerFuchs/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/DerFuchs/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/DerFuchs/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/DerFuchs/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/DerFuchs/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/DerFuchs/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/DerFuchs/repo/issues
-[license-shield]: https://img.shields.io/github/license/DerFuchs/repo.svg?style=for-the-badge
-[license-url]: https://github.com/DerFuchs/repo/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/DerFuchs/magento2-morelayouthandles.svg?style=for-the-badge
+[contributors-url]: https://github.com/DerFuchs/magento2-morelayouthandles/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/DerFuchs/magento2-morelayouthandles.svg?style=for-the-badge
+[forks-url]: https://github.com/DerFuchs/magento2-morelayouthandles/network/members
+[stars-shield]: https://img.shields.io/github/stars/DerFuchs/magento2-morelayouthandles.svg?style=for-the-badge
+[stars-url]: https://github.com/DerFuchs/magento2-morelayouthandles/stargazers
+[issues-shield]: https://img.shields.io/github/issues/DerFuchs/magento2-morelayouthandles.svg?style=for-the-badge
+[issues-url]: https://github.com/DerFuchs/magento2-morelayouthandles/issues
+[license-shield]: https://img.shields.io/github/license/DerFuchs/magento2-morelayouthandles.svg?style=for-the-badge
+[license-url]: https://github.com/DerFuchs/magento2-morelayouthandles/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/michael-fuchs-7b669546/
