@@ -23,7 +23,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built For</a></li>
+        <li><a href="#built-for">Built For</a></li>
       </ul>
     </li>
     <li>
@@ -46,7 +46,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This Module adds layout handles to some Magento 2 pages.
+This Module dynamically adds some more layout handles to specific Magento 2 pages.
 
 This becomes very useful when you want to make changes to the layout, for example remove some blocks or move them to another location.
 
@@ -81,12 +81,12 @@ This module is available as a composer module for Magento 2
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-To do so, follow these steps:
+Enable every possible new layout handle in Magento's admin panel. Then set your layout updates in a layout xml file:
 
 1. Enable the layout handle you want to use: `Magento Admin -> Stores -> Configuration -> General -> More Layout Handles`
-1. Check if the new layout handle appears by using a developer toolbar or enabling the debug output of this module: `Magento Admin -> Stores -> Configuration -> General -> More Layout Handles -> General Settings -> Debug`
-1. Create a new file named by the resulting layout handle `<magento_root>/app/design/frontend/<vendor_name>/<theme_name>/Magento_Theme/layout/<layout_handle_name>.xml` (You don't have to use the Magento_Theme folder, it's just an example)
-1. Start writing your layout update XML. Feel free to use this template as a starting point:
+2. Check if the new layout handle appears by using a developer toolbar or enabling the debug output of this module: `Magento Admin -> Stores -> Configuration -> General -> More Layout Handles -> General Settings -> Debug`
+3. Create a new file named by the resulting layout handle `<magento_root>/app/design/frontend/<vendor_name>/<theme_name>/Magento_Theme/layout/<layout_handle_name>.xml` (You don't have to use the Magento_Theme folder, it's just an example)
+4. Start writing your layout update XML. Feel free to use this template as a starting point:
 ```xml
 <?xml version="1.0"?>
 <!--
@@ -103,7 +103,7 @@ To do so, follow these steps:
     </body>
 </page>
 ```
-1. Clean Caches `bin/magento cache:clean`
+5. Clean Caches: `bin/magento cache:clean`
 
 That's it. When the layout handle occurs, Magento will bake in yout layout updates.
 
@@ -180,6 +180,6 @@ Project Link: [https://github.com/DerFuchs/MoreLayoutHandles](https://github.com
 [issues-shield]: https://img.shields.io/github/issues/DerFuchs/repo.svg?style=for-the-badge
 [issues-url]: https://github.com/DerFuchs/repo/issues
 [license-shield]: https://img.shields.io/github/license/DerFuchs/repo.svg?style=for-the-badge
-[license-url]: https://github.com/DerFuchs/repo/blob/master/LICENSE.txt
+[license-url]: https://github.com/DerFuchs/repo/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/michael-fuchs-7b669546/
