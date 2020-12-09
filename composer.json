@@ -1,0 +1,22 @@
+{
+    "name": "derfuchs/magento2-morelayouthandles",
+    "description": "Add some more useful layout handles to Magento 2",
+    "authors": [
+        {
+            "name": "Michael Fuchs - derfuchs",
+            "email": "michael@derfuchs.net"
+        }
+    ],
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "MiT",
+    "require": {
+        "magento/framework": "~100.0.0"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {
+            "DerFuchs\\MoreLayoutHandles\\": ""
+        }
+    }
+}
