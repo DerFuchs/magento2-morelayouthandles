@@ -100,7 +100,7 @@ Enable every desired layout handle in this modules config section in Magento's a
 ```
 5. Clean Caches: `bin/magento cache:clean`
 
-That's it. When the layout handle occurs, Magento will bake in yout layout updates.
+That's it. When the layout handle occurs, Magento will bake in your layout updates.
 
 ## Available Layout Handles
 
@@ -179,4 +179,4 @@ Project Link: [https://github.com/DerFuchs/magento2-morelayouthandles](https://g
 [license-shield]: https://img.shields.io/github/license/DerFuchs/magento2-morelayouthandles.svg?style=for-the-badge
 [license-url]: https://github.com/DerFuchs/magento2-morelayouthandles/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/michael-fuchs-7b669546/
+[linkedin-url]: https://www.linkedin.com/in/derfuchs/
